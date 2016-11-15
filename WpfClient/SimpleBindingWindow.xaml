@@ -1,0 +1,99 @@
+﻿<Window
+    x:Class="WpfClient.SimpleBindingWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:domain="clr-namespace:Talent.Domain;assembly=Talent.Domain"
+    Title="Simple Binding"
+    SizeToContent="Height"
+    Width="300"
+    Loaded="Window_Loaded" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label
+            Grid.Row="0" Grid.Column="0" Margin="10,4" 
+            Content="MPAA Rating Id:" HorizontalAlignment="Right"
+            />
+        <TextBlock
+            Grid.Row="0" Grid.Column="1" Margin="10,4"
+            Name="MpaaRatingIdTextBlock" >
+            <TextBlock.Text>
+                <Binding>
+                    <Binding.Path>
+                        Id
+                    </Binding.Path>
+                </Binding>
+            </TextBlock.Text>
+
+        </TextBlock>
+        <Label
+            Grid.Row="1" Grid.Column="0"
+            HorizontalAlignment="Right" Margin="10,4"
+            Content="Code:"  />
+        <TextBox
+            Grid.Row="1" Grid.Column="1" Margin="10,4"
+            Name="CodeTextBox" >
+            <TextBox.Text>
+                <Binding>
+                    <Binding.Path>
+                        Code
+                    </Binding.Path>
+                </Binding>
+            </TextBox.Text>
+
+        </TextBox>
+        <Label
+            Grid.Row="2" Grid.Column="0"
+            HorizontalAlignment="Right" Margin="10,4"
+            Content="Name:" />
+        <TextBox
+            Grid.Row="2" Grid.Column="1" Margin="10,4"
+            Name="NameTextBox"
+            Text="{Binding Path=Name}" />
+        <Label
+            Grid.Row="3" Grid.Column="0"
+            HorizontalAlignment="Right" Margin="10,4"
+            Content="Description:" />
+        <TextBox
+            Grid.Row="3" Grid.Column="1" Margin="10,4"
+            Name="DescriptionTextBox"
+            Text="{Binding Path=Description}"/>
+        <CheckBox
+            Grid.Row="4" Grid.Column="1" Margin="10,4"
+            Name="IsInactiveCheckBox" Content="Inactive"
+            IsChecked="{Binding IsInactive}"/>
+        <Label
+            Grid.Row="5" Grid.Column="0"
+            HorizontalAlignment="Right" Margin="10,4"
+            Content="Display Order:" />
+        <TextBox
+            Grid.Row="5" Grid.Column="1" Margin="10,4"
+            Name="DisplayOrderTextBox"
+            Text="{Binding DisplayOrder}"/>
+        <Button
+            Grid.Row="6" Width="80" Margin="10,4"
+            HorizontalAlignment="Right"
+            Content="Cancel"
+            Name="CancelButton"
+            Click="CancelButton_Click" />
+        <Button
+            Grid.Row="6" Grid.Column="1"
+            Width="80" Margin="10,4"
+            HorizontalAlignment="Left"
+            Content="Save"
+            Name="SaveButton"
+            Click="SaveButton_Click" />
+    </Grid>
+</Window>
+

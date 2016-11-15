@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Data Binding" Width="300"  SizeToContent="Height">
+    <StackPanel>
+        <Button x:Name="ElementBindingButton" Click="ElementBindingButton_Click">
+            Element Binding
+        </Button>
+        <Button x:Name="BruteForceButton" Click="BruteForceButton_Click">
+            Brute Force
+        </Button>
+        <Button x:Name="SimpleBindingButton" Click="SimpleBindingButton_Click">
+            Simple Binding
+        </Button>
+        <Button x:Name="ComplexBindingButton" Click="ComplexBindingButton_Click">
+            Complex Binding
+        </Button>
+    </StackPanel>
+</Window>
+
